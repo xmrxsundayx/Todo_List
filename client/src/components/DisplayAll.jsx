@@ -16,23 +16,19 @@ const DisplayAll = ({allTodos, setAllTodos}) => {
 
   return (
     <div>
-        <h1>To Do List:</h1>
-        {
-            allTodos.map((todo, i)=>{
+        <ul className="list-group">
+            {allTodos.map((todo, i)=>{
                 return(
-                    <div key={i}>
-                        <ul>
-                            <li>
-                                <input type='checkbox' onChange={() => toggleComplete(i)} checked ={todo.complete}/>
-                                <label>Done</label>
-                                <span className={todo.complete ? "text-decoration-line-through" : ""}>{todo.todo}</span>
-                                <button onClick={() => deleteTodo(i)}>Delete</button>
-                            </li>
-                        </ul>
-                    </div>
+                    <li className="list-group-item d-flex justify-content-between align-items-center" key={i}>
+                        <div className="form-check">
+                            <input type='checkbox' className="form-check-input" onChange={() => toggleComplete(i)} checked ={todo.complete}/>
+                            <label className="form-check-label"><span className={todo.complete ? "text-decoration-line-through" : ""}>{todo.todo}</span></label>
+                        </div>
+                        <button className="btn btn-outline-danger" onClick={() => deleteTodo(i)}>Delete</button>
+                    </li>
                 )
-            })
-        }
+            })}
+        </ul>
     </div>
   )
 }

@@ -20,16 +20,18 @@ const TodoForm = ({allTodos, setAllTodos}) => {
     }
 
   return (
-    <div className='container form-control'>
+    <div className='container form-group'>
         <form action="" onSubmit={handleNewTodoSubmit}>
-            <label>Create To Do:</label>
-            <input 
-            className='form-control' 
-            type="text" 
-            name='todo'  
-            value={todo.todo}
-            onChange={handleChange}/>
-            <button className='form-control' >Add</button>
+            <label htmlFor="todo">Create To Do:</label>
+            <div className="input-group mb-3">
+                <input 
+                className='form-control' 
+                type="text" 
+                name='todo'  
+                value={todo.todo}
+                onChange={handleChange}/>
+                <button className='btn btn-outline-secondary' type="submit" id="button-addon2">Add</button>
+            </div>
         </form>
     </div>
   )

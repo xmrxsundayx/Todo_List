@@ -8,7 +8,8 @@ function App() {
   const [allTodos, setAllTodos] = useState([]);
 
   return (
-    <div className="App">
+    <div className="App container">
+      <h1 className="text-center my-4">To-Do List</h1>
       <TodoForm allTodos={allTodos} setAllTodos={setAllTodos} />
       <DisplayAll allTodos={allTodos} setAllTodos={setAllTodos} />
     </div>
